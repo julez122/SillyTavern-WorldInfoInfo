@@ -178,7 +178,7 @@ const init = ()=>{
         }
         // Drag-to-move toggle
         const dragRow = document.createElement('label'); {
-            dragRow.classList.add('stwii--configRow');
+            dragRow.classList.add('stwii--configRow', 'stwii--dragRow');
             dragRow.title = 'Allow dragging the book icon to reposition it';
             const cb = document.createElement('input'); {
                 cb.type = 'checkbox';
@@ -205,7 +205,7 @@ const init = ()=>{
         }
         // Reset position row
         const resetRow = document.createElement('div'); {
-            resetRow.classList.add('stwii--configRow');
+            resetRow.classList.add('stwii--configRow', 'stwii--resetRow');
             resetRow.title = 'Reset the book icon position to default';
             resetRow.style.userSelect = 'none';
             const resetLbl = document.createElement('div'); {
@@ -1623,13 +1623,18 @@ window.STWII.destroy = function() {
                     }
 
                     const ul = document.createElement('ul');
+                        ul.style.marginBottom = '0px';
+                        ul.style.marginTop = '0px';
+                        ul.style.fontSize = '12px';
                     for (const ev of list) {
                         const li = document.createElement('li');
                         li.textContent = fmtEntry(ev);
+                        li.style.marginBottom = '5px';
 
                         // Highlight constants
                         if (ev && ev.constant === true) {
-                            li.style.color = 'var(--SmartThemeEmColor)';
+                            li.style.color = 'rgba(176, 0, 85, 0.51)';
+                            li.style.fontWeight = '600';
                         }
 
                         // Append matched keywords inline with operation between primary and secondary
@@ -1681,7 +1686,9 @@ window.STWII.destroy = function() {
 
                             if (kwText) {
                                 const span = document.createElement('span');
-                                span.style.color = 'var(--SmartThemeQuoteColor)';
+                                span.style.color = 'var(--SmartThemeShadowColor)';
+                                span.style.fontSize = '10px';
+                                span.style.fontStyle = 'italic';
                                 span.textContent = kwText;
                                 li.append(span);
                             }

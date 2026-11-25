@@ -4,6 +4,7 @@
 
 - Fixes mobile bug where the panels hid the floating button, resulting in having to reload SillyTavern again to close it. [⤷](https://github.com/julez122/SillyTavern-WorldInfoInfo/commit/be95a94604260cf25cd3adbfc7811831d38a2af1)
 - Changed homepage and author of `manifest.json` to my own fork. [⤷](https://github.com/julez122/SillyTavern-WorldInfoInfo/commit/dc4690220d2e94b6fe86146879054d30b2a11899)
+- Various CSS changes and fixes to make the layout more consistent.
 
 ---
 
