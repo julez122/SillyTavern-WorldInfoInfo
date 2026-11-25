@@ -1,7 +1,7 @@
 :root {
   --panel-color: rgba(92, 196, 173, 0.2);
   --panel-border-color: rgba(220, 252, 231, 0.17);
-  --book-color: #3ed0b0;
+  --book-color: rgb(62, 208, 176);
   --badge-color: var(--SmartThemeBodyColor);
 }
 .stwii--trigger {
@@ -32,7 +32,7 @@
   font-weight: bold;
   font-family: var(--mainFontFamily);
   color: #ffffff;
-  background: var(--SmartThemeBodyColor), #ee5396;
+  background: var(--SmartThemeBodyColor);
   line-height: 1;
   padding: 0.2em;
   border-radius: 50%;
@@ -54,7 +54,7 @@
 }
 
 .stwii--panel {
-  filter: drop-shadow(1px 1px 2px var(--black50a));
+  filter: drop-shadow(1px 1px 2px rgba(18, 96, 79, 0.55));
   z-index: 30000;
   overflow: auto;
   border: 1px solid var(--panel-border-color);
@@ -75,10 +75,21 @@
 .stwii--panel.stwii--isActive {
   display: flex;
 }
+
+@media (max-width: 768px) {
+  .stwii--panel,
+  .stwii--panel.stwii--isActive {
+    padding: 0.7em 0.2em 0.7em 0.7em !important;
+    max-width: 65dvw !important;
+    max-height: 50dvh !important;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
 .stwii--world {
   font-weight: bold;
   margin-bottom: 5px;
-  text-shadow: 0 0 5px var(--color-black) !important;
+  text-shadow: 0 0 5px #000000 !important;
 }
 .stwii--entry {
   gap: 0.7em;
@@ -96,7 +107,7 @@
 }
 
 .stwii--entry * {
-  text-shadow: 0 0 5px var(--color-black) !important;
+  text-shadow: 0 0 5px #000000 !important;
 }
 
 .stwii--strategy {
@@ -112,7 +123,6 @@
 .stwii--messages .stwii--strategy {
   position: relative;
   font-size: 11px;
-  margin-right: 5px;
 }
 .stwii--messages .stwii--strategy::after {
   content: attr(data-stwii--count);
@@ -124,17 +134,22 @@
   padding-top: 0.25em;
 }
 .stwii--messages .stwii--strategy::before {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 .stwii--messages .stwii--title {
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
-  font-size: 0.7em;
+  font-size: 0.75em;
   width: 0;
   margin: 5px 0px;
-  border-block: 0.7px dashed var(--SmartThemeShadowColor);
+  border: 1px dashed var(--SmartThemeShadowColor);
+  border-radius: 10px;
   padding-block: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-style: italic;
+  background-color: color-mix(in srgb, var(--panel-color) 60%, black);
 }
 
 .stwii--entry.stwii--messages {
@@ -155,8 +170,9 @@
   opacity: 1;
   flex: 0 0 auto;
   line-height: 0.2em;
-  padding-bottom: 0.8em 0px;
+  padding: 0.8em 0;
   font-weight: 900;
+  letter-spacing: 2px;
 }
 .stwii--configRow {
   display: flex;
